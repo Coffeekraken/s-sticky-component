@@ -9,7 +9,6 @@ import __getStyleProperty from 'coffeekraken-sugar/js/dom/getStyleProperty'
  * @extends 	SWebComponent
  * Stick any items with ease inside his container or depending on a totaly different element with full control over the display
  *
- * @styleguide 		Objects / Sticky
  * @example 	html
  * <div style="height:200vw; background:rgba(255,0,0,.2); margin:40px 0;">
  *	<s-sticky id="red" style="padding:10px; background:white; margin:10px">
