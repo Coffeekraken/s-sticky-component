@@ -83,7 +83,7 @@ A number that specify the offset top before triggering the sticky
 
 Type : **{ [Number](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Number) }**
 
-Default : **0**
+Default : **null**
 
 
 ### placeholder

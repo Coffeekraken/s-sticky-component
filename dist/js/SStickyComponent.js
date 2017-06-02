@@ -39,7 +39,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @extends 	SWebComponent
  * Stick any items with ease inside his container or depending on a totaly different element with full control over the display
  *
- * @styleguide 		Objects / Sticky
  * @example 	html
  * <div style="height:200vw; background:rgba(255,0,0,.2); margin:40px 0;">
  *	<s-sticky id="red" style="padding:10px; background:white; margin:10px">
@@ -127,13 +126,24 @@ var SStickyComponent = function (_SWebComponent) {
 			_get(SStickyComponent.prototype.__proto__ || Object.getPrototypeOf(SStickyComponent.prototype), 'componentMount', this).call(this);
 
 			// save initial element setup
-			this.base_position = this.style.position;
-			this.base_top = parseInt(this.style.top) || 0;
-			this.base_height = parseInt(this.offsetHeight);
+			this._basePosition = this.style.position;
+			this._baseWidth = parseInt(this.offsetWidth);
+			this._baseTop = parseInt(this.style.top) || 0;
+			this._baseHeight = parseInt(this.offsetHeight);
 
 			// get top element
-			this._topElm = this.props.topElm || this.parentNode;
-			this._bottomElm = this.props.bottomElm || this.parentNode;
+			this._topElm = this.parentNode;
+			if (typeof this.props.topElm === 'string') {
+				this._topElm = document.querySelector(this.props.topElm);
+			} else if (this.props.topElm instanceof HTMLElement) {
+				this._topElm = this.props.topElm;
+			}
+			this._bottomElm = this.parentNode;
+			if (typeof this.props.bottomElm === 'string') {
+				this._bottomElm = document.querySelector(this.props.bottomElm);
+			} else if (this.props.bottomElm instanceof HTMLElement) {
+				this._bottomElm = this.props.bottomElm;
+			}
 
 			// get margins
 			this._margins = {
@@ -144,11 +154,14 @@ var SStickyComponent = function (_SWebComponent) {
 			};
 
 			// make sure the parent element has a position defined, otherwise, set the position as relative
-			var parentElm = this.parentNode;
-			if (parentElm) {
-				var parentPosition = (0, _getStyleProperty2.default)(parentElm, 'position');
-				if (parentPosition !== 'absolute' && parentPosition !== 'relative') {
-					parentElm.style.position = 'relative';
+			var topElmPosition = (0, _getStyleProperty2.default)(this._topElm, 'position');
+			if (topElmPosition !== 'absolute' && topElmPosition !== 'relative') {
+				this._topElm.style.position = 'relative';
+			}
+			if (this._topElm !== this._bottomElm) {
+				var bottomElmPosition = (0, _getStyleProperty2.default)(this._bottomElm, 'position');
+				if (bottomElmPosition !== 'absolute' && bottomElmPosition !== 'relative') {
+					this._bottomElm.style.position = 'relative';
 				}
 			}
 
@@ -180,7 +193,7 @@ var SStickyComponent = function (_SWebComponent) {
 			}
 
 			// calculate the detect offset
-			var offsetTopDetection = this.props.offsetTopDetection;
+			var offsetTopDetection = this.props.offsetTopDetection || this.props.offsetTop;
 			if (typeof this.props.offsetTopDetection === 'function') {
 				offsetTopDetection = this.props.offsetTopDetection(this);
 			}
@@ -194,19 +207,22 @@ var SStickyComponent = function (_SWebComponent) {
 
 			// scrollTop
 			var scrollTop = (0, _scrollTop2.default)() + offsetTopDetection;
-			scrollTop = (0, _scrollTop2.default)();
-
-			if (scrollTop > this.boundary.bottom - this._elmHeight - (this.props.offsetTop + this.props.offsetBottom + this._margins.top + this._margins.bottom)) {
+			if (scrollTop - offsetTopDetection > this.boundary.bottom - this._elmHeight - (this.props.offsetTop + this.props.offsetBottom + this._margins.top + this._margins.bottom)) {
 				// update needReset status
 				this.needReset = true;
 				// clear the _resetTimeout
 				clearTimeout(this._resetTimeout);
 				// the element need to be sticked on top of the window
-				if (this.base_position === 'fixed') {
-					this.style.top = this.boundary.bottom - scrollTop - this._elmHeight - this.props.offsetBottom + this.base_top;
+				if (this._basePosition === 'fixed') {
+					this.style.top = this.boundary.bottom - scrollTop - this._elmHeight - this.props.offsetBottom + this._baseTop;
 				} else {
+					var bottom = this.props.offsetBottom;
+					if (this.parentNode) {
+						bottom += parseFloat((0, _getStyleProperty2.default)(this.parentNode, 'padding-bottom'));
+					}
+
 					this.style.position = 'absolute';
-					this.style.bottom = this.props.offsetBottom + 'px';
+					this.style.bottom = bottom + 'px';
 					this.style.top = 'auto';
 					this.addComponentClass(this, null, null, 'sticked');
 				}
@@ -223,7 +239,7 @@ var SStickyComponent = function (_SWebComponent) {
 				}
 				// add dirty class
 				this.addComponentClass(this, null, null, 'dirty');
-			} else if (scrollTop - offsetTopDetection + this._margins.top > this.boundary.top) {
+			} else if (scrollTop + this._margins.top > this.boundary.top) {
 				// update needReset status
 				this.needReset = true;
 				// clear the _resetTimeout
@@ -285,7 +301,7 @@ var SStickyComponent = function (_SWebComponent) {
 				this.addComponentClass(this.placeholderElm, 'placeholder');
 			}
 			this.placeholderElm.style.width = this._elmWidth + 'px';
-			this.placeholderElm.style.height = this.base_height + 'px';
+			this.placeholderElm.style.height = this._baseHeight + 'px';
 			this.placeholderElm.style.marginTop = this._margins.top;
 			this.placeholderElm.style.marginRight = this._margins.right;
 			this.placeholderElm.style.marginBottom = this._margins.bottom;
@@ -311,12 +327,18 @@ var SStickyComponent = function (_SWebComponent) {
 			var bottom = this.props.bottom;
 			if (typeof this.props.bottom !== 'number') {
 				bottom = (0, _offset2.default)(this._bottomElm).top + this._bottomElm.offsetHeight;
+				if (this.parentNode) {
+					bottom -= parseFloat((0, _getStyleProperty2.default)(this.parentNode, 'padding-bottom'));
+				}
 			}
 
 			// top
 			var top = this.props.top;
 			if (typeof this.props.top !== 'number') {
 				top = (0, _offset2.default)(this._topElm).top;
+				if (this.parentNode) {
+					top += parseFloat((0, _getStyleProperty2.default)(this.parentNode, 'padding-top'));
+				}
 			}
 
 			// calculate boundaries
@@ -337,7 +359,11 @@ var SStickyComponent = function (_SWebComponent) {
 			// element width
 			if (!this.props.width) {
 				if (this.isSticked()) {
-					this._elmWidth = this.parentNode.offsetWidth - this._margins.left - this._margins.right;
+					if (this.placeholderElm) {
+						this._elmWidth = this.placeholderElm.offsetWidth;
+					} else {
+						this._elmWidth = this._baseWidth;
+					}
 				} else {
 					this._elmWidth = this.offsetWidth;
 				}
@@ -477,7 +503,7 @@ var SStickyComponent = function (_SWebComponent) {
      * @prop
      * @type 	{Number}
      */
-				offsetTopDetection: 0,
+				offsetTopDetection: null,
 
 				/**
      * Specify if a ghost placeholder has to replace the sticked element into the DOM
