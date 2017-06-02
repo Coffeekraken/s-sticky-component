@@ -9,7 +9,6 @@ import __getStyleProperty from 'coffeekraken-sugar/js/dom/getStyleProperty'
  * @extends 	SWebComponent
  * Stick any items with ease inside his container or depending on a totaly different element with full control over the display
  *
- * @styleguide 		Objects / Sticky
  * @example 	html
  * <div style="height:200vw; background:rgba(255,0,0,.2); margin:40px 0;">
  *	<s-sticky id="red" style="padding:10px; background:white; margin:10px">
@@ -77,7 +76,7 @@ export default class SStickyComponent extends SWebComponent {
 			 * @prop
 			 * @type 	{Number}
 			 */
-			offsetTopDetection : 0,
+			offsetTopDetection : null,
 
 			/**
 			 * Specify if a ghost placeholder has to replace the sticked element into the DOM
@@ -167,13 +166,24 @@ export default class SStickyComponent extends SWebComponent {
 		super.componentMount();
 
 		// save initial element setup
-		this.base_position = this.style.position;
-		this.base_top = parseInt(this.style.top) || 0;
-		this.base_height = parseInt(this.offsetHeight);
+		this._basePosition = this.style.position;
+		this._baseWidth = parseInt(this.offsetWidth);
+		this._baseTop = parseInt(this.style.top) || 0;
+		this._baseHeight = parseInt(this.offsetHeight);
 
 		// get top element
-		this._topElm = this.props.topElm || this.parentNode;
-		this._bottomElm = this.props.bottomElm || this.parentNode;
+		this._topElm = this.parentNode;
+		if (typeof(this.props.topElm) === 'string') {
+			this._topElm = document.querySelector(this.props.topElm);
+		} else if (this.props.topElm instanceof HTMLElement) {
+			this._topElm = this.props.topElm;
+		}
+		this._bottomElm = this.parentNode;
+		if (typeof(this.props.bottomElm) === 'string') {
+			this._bottomElm = document.querySelector(this.props.bottomElm);
+		} else if (this.props.bottomElm instanceof HTMLElement) {
+			this._bottomElm = this.props.bottomElm;
+		}
 
 		// get margins
 		this._margins = {
@@ -184,11 +194,14 @@ export default class SStickyComponent extends SWebComponent {
 		};
 
 		// make sure the parent element has a position defined, otherwise, set the position as relative
-		const parentElm = this.parentNode;
-		if (parentElm) {
-			const parentPosition = __getStyleProperty(parentElm, 'position');
-			if (parentPosition !== 'absolute' && parentPosition !== 'relative') {
-				parentElm.style.position = 'relative';
+		const topElmPosition = __getStyleProperty(this._topElm, 'position');
+		if (topElmPosition !== 'absolute' && topElmPosition !== 'relative') {
+			this._topElm.style.position = 'relative';
+		}
+		if (this._topElm !== this._bottomElm) {
+			const bottomElmPosition = __getStyleProperty(this._bottomElm, 'position');
+			if (bottomElmPosition !== 'absolute' && bottomElmPosition !== 'relative') {
+				this._bottomElm.style.position = 'relative';
 			}
 		}
 
@@ -218,7 +231,7 @@ export default class SStickyComponent extends SWebComponent {
 		}
 
 		// calculate the detect offset
-		let offsetTopDetection = this.props.offsetTopDetection;
+		let offsetTopDetection = this.props.offsetTopDetection || this.props.offsetTop;
 		if (typeof(this.props.offsetTopDetection) === 'function') {
 			offsetTopDetection = this.props.offsetTopDetection(this);
 		}
@@ -232,19 +245,22 @@ export default class SStickyComponent extends SWebComponent {
 
 		// scrollTop
 		let scrollTop = __scrollTop() + offsetTopDetection;
-		scrollTop = __scrollTop();
-
-		if (scrollTop > this.boundary.bottom - this._elmHeight - (this.props.offsetTop + this.props.offsetBottom + this._margins.top + this._margins.bottom)) {
+		if (scrollTop - offsetTopDetection > this.boundary.bottom - this._elmHeight - (this.props.offsetTop + this.props.offsetBottom + this._margins.top + this._margins.bottom)) {
 			// update needReset status
 			this.needReset = true;
 			// clear the _resetTimeout
 			clearTimeout(this._resetTimeout);
 			// the element need to be sticked on top of the window
-			if (this.base_position === 'fixed') {
-				this.style.top = this.boundary.bottom - scrollTop - this._elmHeight - this.props.offsetBottom + this.base_top
+			if (this._basePosition === 'fixed') {
+				this.style.top = this.boundary.bottom - scrollTop - this._elmHeight - this.props.offsetBottom + this._baseTop
 			} else {
+				let bottom = this.props.offsetBottom;
+				if (this.parentNode) {
+					bottom += parseFloat(__getStyleProperty(this.parentNode, 'padding-bottom'));
+				}
+
 				this.style.position = 'absolute';
-				this.style.bottom = this.props.offsetBottom + 'px';
+				this.style.bottom = bottom + 'px';
 				this.style.top = 'auto';
 				this.addComponentClass(this, null, null, 'sticked');
 			}
@@ -261,7 +277,7 @@ export default class SStickyComponent extends SWebComponent {
 			}
 			// add dirty class
 			this.addComponentClass(this, null, null, 'dirty');
-		} else if (scrollTop - offsetTopDetection + this._margins.top > this.boundary.top) {
+		} else if (scrollTop + this._margins.top > this.boundary.top) {
 			// update needReset status
 			this.needReset = true;
 			// clear the _resetTimeout
@@ -314,7 +330,7 @@ export default class SStickyComponent extends SWebComponent {
 			this.addComponentClass(this.placeholderElm, 'placeholder');
 		}
 		this.placeholderElm.style.width = this._elmWidth + 'px';
-		this.placeholderElm.style.height = this.base_height + 'px';
+		this.placeholderElm.style.height = this._baseHeight + 'px';
 		this.placeholderElm.style.marginTop = this._margins.top;
 		this.placeholderElm.style.marginRight = this._margins.right;
 		this.placeholderElm.style.marginBottom = this._margins.bottom;
@@ -337,12 +353,18 @@ export default class SStickyComponent extends SWebComponent {
 		let bottom = this.props.bottom;
 		if (typeof(this.props.bottom) !== 'number') {
 			bottom = __offset(this._bottomElm).top + this._bottomElm.offsetHeight;
+			if (this.parentNode) {
+				bottom -= parseFloat(__getStyleProperty(this.parentNode, 'padding-bottom'));
+			}
 		}
 
 		// top
 		let top = this.props.top;
 		if (typeof(this.props.top) !== 'number') {
-			top = __offset(this._topElm).top
+			top = __offset(this._topElm).top;
+			if (this.parentNode) {
+				top += parseFloat(__getStyleProperty(this.parentNode, 'padding-top'));
+			}
 		}
 
 		// calculate boundaries
@@ -363,7 +385,11 @@ export default class SStickyComponent extends SWebComponent {
 		// element width
 		if ( ! this.props.width) {
 			if ( this.isSticked()) {
-				this._elmWidth = this.parentNode.offsetWidth - this._margins.left - this._margins.right;
+				if (this.placeholderElm) {
+					this._elmWidth = this.placeholderElm.offsetWidth;
+				} else {
+					this._elmWidth = this._baseWidth;
+				}
 			} else {
 				this._elmWidth = this.offsetWidth;
 			}

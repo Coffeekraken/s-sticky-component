@@ -36,7 +36,7 @@ Stick any items with ease inside his container or depending on a totaly differen
 3. [Get Started](#readme-get-started)
 4. [Javascript API](doc/js)
 5. [SASS API](doc/sass)
-6. [Sugar Web Components Documentation](https://github.com/coffeekraken/sugar/blob/master/doc/webcomponent.md)
+6. [Sugar Web Components Documentation](https://github.com/coffeekraken/sugar/blob/master/doc/js/webcomponents.md)
 7. [Browsers support](#readme-browsers-support)
 8. [Contribute](#readme-contribute)
 9. [Who are Coffeekraken?](#readme-who-are-coffeekraken)
@@ -61,9 +61,20 @@ import SStickyComponent from 'coffeekraken-s-sticky-component'
 Then simply use it inside your html like so:
 
 ```html
-<s-sticky>
-	<!-- sticky content here... -->
-</s-sticky>
+<div style="height:200vw; background:rgba(255,0,0,.2); margin:40px 0;">
+	<s-sticky id="red" style="padding:10px; background:white; margin:10px">
+		Hello red sticky element
+	</s-sticky>
+	<div style="position:absolute; top:30%; left:50%; right:0; height:400px; background:rgba(0,0,255,.2)">
+		<s-sticky>
+			Hello violet sticky element
+		</s-sticky>
+	</div>
+</div><div style="height:200vw; background:rgba(0,255,0,.2); margin:40px 0;">
+	<s-sticky>
+		Hello green sticky element
+	</s-sticky>
+</div>
 ```
 
 <a id="readme-browsers-support"></a>
