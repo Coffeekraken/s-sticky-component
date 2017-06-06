@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-s-sticky-component",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Stick any items with ease inside his container or depending on a totaly different element with full control over the display",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
@@ -44,7 +44,7 @@
   }],
   "license": "MIT",
   "dependencies": {
-    "coffeekraken-sugar": "^0.0.2"
+    "coffeekraken-sugar": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
