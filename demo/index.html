@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="dist/css/style.css" />
+</head>
+<body>
+
+	<div style="height:200vw; background:rgba(255,0,0,.2); margin:40px 0;">
+		<s-sticky id="red" style="padding:10px; background:white; margin:10px">
+			Hello red sticky element
+		</s-sticky>
+		<div style="position:absolute; top:30%; left:50%; right:0; height:400px; background:rgba(0,0,255,.2)">
+			<s-sticky>
+				Hello violet sticky element
+			</s-sticky>
+		</div>
+	</div><div style="height:200vw; background:rgba(0,255,0,.2); margin:40px 0;">
+		<s-sticky>
+			Hello green sticky element
+		</s-sticky>
+	</div>
+
+	<script src="dist/js/app.js"></script>
+</body>
+</html>

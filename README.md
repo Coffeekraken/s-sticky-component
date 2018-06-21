@@ -1,9 +1,9 @@
 # Coffeekraken s-sticky-component <img src=".resources/coffeekraken-logo.jpg" height="25px" />
 
 <p>
-	<a href="https://travis-ci.org/Coffeekraken/s-sticky-component">
+	<!-- <a href="https://travis-ci.org/Coffeekraken/s-sticky-component">
 		<img src="https://img.shields.io/travis/Coffeekraken/s-sticky-component.svg?style=flat-square" />
-	</a>
+	</a> -->
 	<a href="https://www.npmjs.com/package/coffeekraken-s-sticky-component">
 		<img src="https://img.shields.io/npm/v/coffeekraken-s-sticky-component.svg?style=flat-square" />
 	</a>
