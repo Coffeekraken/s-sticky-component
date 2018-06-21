@@ -88,7 +88,7 @@ Default : **null**
 
 ### placeholder
 
-in order to keep the same scroll height
+Specify if a ghost placeholder has to replace the sticked element into the DOM
 
 Type : **{ [Boolean](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Boolean) }**
 
