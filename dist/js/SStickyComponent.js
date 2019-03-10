@@ -28,6 +28,10 @@ var _getStyleProperty = require('coffeekraken-sugar/js/dom/getStyleProperty');
 
 var _getStyleProperty2 = _interopRequireDefault(_getStyleProperty);
 
+var _wrap = require('coffeekraken-sugar/js/dom/wrap');
+
+var _wrap2 = _interopRequireDefault(_wrap);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -129,9 +133,7 @@ var SStickyComponent = function (_SWebComponent) {
 
 			// save initial element setup
 			this._basePosition = this.style.position;
-			this._baseWidth = parseInt(this.offsetWidth);
 			this._baseTop = parseInt(this.style.top) || 0;
-			this._baseHeight = parseInt(this.offsetHeight);
 
 			// get top element
 			this._topElm = this.parentNode;
@@ -166,6 +168,13 @@ var SStickyComponent = function (_SWebComponent) {
 					this._bottomElm.style.position = 'relative';
 				}
 			}
+
+			// wrap the sticky element inside a placeholder div
+			// that will take the sticky place when it is sticky
+			var $placeholder = document.createElement('div');
+			$placeholder.classList.add(this.componentNameDash + '__placeholder');
+			(0, _wrap2.default)(this, $placeholder);
+			this._$placeholder = $placeholder;
 
 			// listen for scroll
 			window.addEventListener('scroll', this._onScroll.bind(this));
@@ -222,22 +231,11 @@ var SStickyComponent = function (_SWebComponent) {
 					if (this.parentNode) {
 						bottom += parseFloat((0, _getStyleProperty2.default)(this.parentNode, 'padding-bottom'));
 					}
-
 					this.style.position = 'absolute';
 					this.style.bottom = bottom + 'px';
 					this.style.top = 'auto';
+					this.style.width = this._elmWidth + 'px';
 					this.addComponentClass(this, null, null, 'sticked');
-				}
-				// handle placeholder if needed
-				if (this.props.placeholder) {
-					this._addPlaceholder();
-				}
-				// if is an id, add this to the body for styling
-				if (this.id) {
-					var bodyClass = this.componentNameDash + '-' + this.id;
-					if (this.ownerDocument.body.classList.contains(bodyClass)) {
-						this.ownerDocument.body.classList.remove(bodyClass);
-					}
 				}
 				// add dirty class
 				this.addComponentClass(this, null, null, 'dirty');
@@ -246,24 +244,20 @@ var SStickyComponent = function (_SWebComponent) {
 				this.needReset = true;
 				// clear the _resetTimeout
 				clearTimeout(this._resetTimeout);
+				// set the height of the placeholder to avoid "jumps" in scroll
+				if (!this._$placeholder.style.height) {
+					this._$placeholder.style.height = this.offsetHeight + 'px';
+					this._$placeholder.style.marginTop = this._margins.top + 'px';
+					this._$placeholder.style.marginBottom = this._margins.bottom + 'px';
+				}
 				// the element need to be sticked on bottom of the
 				// relative element
 				this.style.position = 'fixed';
 				this.style.top = this.props.offsetTop + 'px';
 				this.style.bottom = 'auto';
 				this.style.width = this._elmWidth + 'px';
+				// this.style.width = this._elmWidth + 'px';
 				this.addComponentClass(this, null, null, 'sticked');
-				// handle placeholder if needed
-				if (this.props.placeholder) {
-					this._addPlaceholder();
-				}
-				// if is an id, add this to the body for styling
-				if (this.id) {
-					var _bodyClass = this.componentNameDash + '-' + this.id;
-					if (!this.ownerDocument.body.classList.contains(_bodyClass)) {
-						this.ownerDocument.body.classList.add(_bodyClass);
-					}
-				}
 				// add dirty class
 				this.addComponentClass(this, null, null, 'dirty');
 			} else {
@@ -285,36 +279,13 @@ var SStickyComponent = function (_SWebComponent) {
 			this.resizeTimeout = setTimeout(function () {
 				// update
 				_this2._update();
+				// set the width
+				if (!_this2.isSticked()) {
+					_this2.style.width = '';
+				} else {
+					_this2.style.width = _this2._elmWidth + 'px';
+				}
 			}, this.props.resizeTimeout);
-		}
-
-		/**
-   * Add placeholder
-   */
-
-	}, {
-		key: '_addPlaceholder',
-		value: function _addPlaceholder() {
-			var _this3 = this;
-
-			// create if needed
-			if (!this.placeholderElm) {
-				this.placeholderElm = document.createElement('div');
-				this.addComponentClass(this.placeholderElm, 'placeholder');
-			}
-			this.placeholderElm.style.width = this._elmWidth + 'px';
-			this.placeholderElm.style.height = this._baseHeight + 'px';
-			this.placeholderElm.style.marginTop = this._margins.top;
-			this.placeholderElm.style.marginRight = this._margins.right;
-			this.placeholderElm.style.marginBottom = this._margins.bottom;
-			this.placeholderElm.style.marginLeft = this._margins.left;
-
-			// add the placeholder into the dom
-			if (!this.placeholderElm.parentNode) {
-				this.mutate(function () {
-					_this3.parentNode.insertBefore(_this3.placeholderElm, _this3);
-				});
-			}
 		}
 
 		/**
@@ -360,26 +331,15 @@ var SStickyComponent = function (_SWebComponent) {
 
 			// element width
 			if (!this.props.width) {
-				if (this.isSticked()) {
-					if (this.placeholderElm) {
-						this._elmWidth = this.placeholderElm.offsetWidth;
-					} else {
-						this._elmWidth = this._baseWidth;
-					}
-				} else {
+				if (!this.isSticked()) {
 					this._elmWidth = this.offsetWidth;
+				} else {
+					this._elmWidth = this._$placeholder.offsetWidth - this._margins.left - this._margins.right;
 				}
 			} else if (typeof this.props.width === 'string') {
 				this._elmWidth = document.querySelector(this.props.width).offsetWidth;
 			} else if (typeof this.props.width === 'number') {
 				this._elmWidth = this.props.width;
-			}
-
-			if (!this.isSticked()) {
-				this.style.width = null;
-			} else {
-				// set element width
-				this.style.width = this._elmWidth + 'px';
 			}
 
 			// reset update counter
@@ -393,7 +353,7 @@ var SStickyComponent = function (_SWebComponent) {
 	}, {
 		key: 'reset',
 		value: function reset() {
-			var _this4 = this;
+			var _this3 = this;
 
 			if (!this.needReset) return;
 			this.needReset = false;
@@ -411,26 +371,24 @@ var SStickyComponent = function (_SWebComponent) {
 
 			// get animation properties to wait if needed
 			setTimeout(function () {
-				var animationProperties = (0, _getAnimationProperties2.default)(_this4);
+				var animationProperties = (0, _getAnimationProperties2.default)(_this3);
 
-				clearTimeout(_this4._resetTimeout);
-				_this4._resetTimeout = setTimeout(function () {
+				clearTimeout(_this3._resetTimeout);
+				_this3._resetTimeout = setTimeout(function () {
 
 					// reset the element style
-					_this4.style.position = '';
-					_this4.style.top = '';
-					_this4.style.bottom = '';
-					_this4.style.width = '';
+					_this3.style.position = '';
+					_this3.style.top = '';
+					_this3.style.bottom = '';
+					_this3.style.width = '';
 
-					// remove the placeholder if exist
-					if (_this4.placeholderElm && _this4.placeholderElm.parentNode) {
-						_this4.placeholderElm.parentNode.removeChild(_this4.placeholderElm);
-					}
+					// reset the placeholder style
+					_this3._$placeholder.style.height = '';
 
 					// remove the out class
-					_this4.removeComponentClass(_this4, null, null, 'out');
+					_this3.removeComponentClass(_this3, null, null, 'out');
 					// remove the sticked class
-					_this4.removeComponentClass(_this4, null, null, 'sticked');
+					_this3.removeComponentClass(_this3, null, null, 'sticked');
 				}, animationProperties.totalDuration);
 			});
 		}
@@ -506,14 +464,6 @@ var SStickyComponent = function (_SWebComponent) {
      * @type 	{Number}
      */
 				offsetTopDetection: null,
-
-				/**
-     * Specify if a ghost placeholder has to replace the sticked element into the DOM
-     * @prop
-     * in order to keep the same scroll height
-     * @type 	{Boolean}
-     */
-				placeholder: true,
 
 				/**
      * Specify the number of scroll event to wait before update the references and sizes

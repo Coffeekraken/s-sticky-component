@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-s-sticky-component",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Stick any items with ease inside his container or depending on a totaly different element with full control over the display",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
@@ -16,7 +16,10 @@
       "paths": "src/**/*.scss"
     },
     "demo:js": {
-      "paths": "demo/src/**/*.js"
+      "paths": [
+        "demo/src/**/*.js",
+        "dist/js/**/*.js"
+      ]
     },
     "demo:css": {
       "paths": "demo/src/**/*.scss"
@@ -47,11 +50,13 @@
     "coffeekraken"
   ],
   "author": "Coffeekraken <hello@coffeekraken.io>",
-  "contributors": [{
-    "name": "Olivier Bossel",
-    "email": "olivier.bossel@gmail.com",
-    "url": "http://olivierbossel.com"
-  }],
+  "contributors": [
+    {
+      "name": "Olivier Bossel",
+      "email": "olivier.bossel@gmail.com",
+      "url": "http://olivierbossel.com"
+    }
+  ],
   "license": "MIT",
   "jest": {
     "roots": [
@@ -59,8 +64,8 @@
     ]
   },
   "dependencies": {
-    "coffeekraken-sugar": "^1.0.0",
-    "coffeekraken-s-typography-component": "^1.0.0"
+    "coffeekraken-s-typography-component": "^1.0.0",
+    "coffeekraken-sugar": "^1.0.78"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -78,7 +83,7 @@
     "git-changelog": "^1.1.2",
     "http-server": "^0.11.1",
     "jest": "^23.1.0",
-    "node-sass": "^4.0.0",
+    "node-sass": "^4.11.0",
     "webpack": "^4.0.0",
     "webpack-cli": "^3.0.3"
   }
