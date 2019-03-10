@@ -358,19 +358,11 @@ var SStickyComponent = function (_SWebComponent) {
 			if (!this.needReset) return;
 			this.needReset = false;
 
-			// if is an id, add this to the body for styling
-			if (this.id) {
-				var bodyClass = this.componentNameDash + '-' + this.id;
-				if (this.ownerDocument.body.classList.contains(bodyClass)) {
-					this.ownerDocument.body.classList.remove(bodyClass);
-				}
-			}
-
 			// add the out class
 			this.addComponentClass(this, null, null, 'out');
 
 			// get animation properties to wait if needed
-			setTimeout(function () {
+			this.mutate(function () {
 				var animationProperties = (0, _getAnimationProperties2.default)(_this3);
 
 				clearTimeout(_this3._resetTimeout);
@@ -383,7 +375,12 @@ var SStickyComponent = function (_SWebComponent) {
 					_this3.style.width = '';
 
 					// reset the placeholder style
-					_this3._$placeholder.style.height = '';
+					// wait a little to avoid jump in scroll
+					_this3.mutate(function () {
+						_this3._$placeholder.style.height = '';
+						_this3._$placeholder.style.marginTop = '';
+						_this3._$placeholder.style.marginBottom = '';
+					});
 
 					// remove the out class
 					_this3.removeComponentClass(_this3, null, null, 'out');
