@@ -23,14 +23,12 @@ Stick any items with ease inside his container or depending on a totaly differen
 </s-sticky>
 </div>
 ```
-Author : Olivier Bossel <olivier.bossel@gmail.com> *
-
 
 
 
 ## Attributes
 
-Here's the list of available attribute to set on the element.
+Here's the list of available attribute(s).
 
 ### topElm
 
@@ -86,15 +84,6 @@ Type : **{ [Number](https://developer.mozilla.org/fr/docs/Web/JavaScript/Referen
 Default : **null**
 
 
-### placeholder
-
-Specify if a ghost placeholder has to replace the sticked element into the DOM
-
-Type : **{ [Boolean](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Boolean) }**
-
-Default : **true**
-
-
 ### updateEvery
 
 Specify the number of scroll event to wait before update the references and sizes
@@ -109,6 +98,8 @@ Default : **5**
 How long to wait after a window resize before updating sizes etc...
 
 Type : **{ [Number](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Number) }**
+
+Default : **50**
 
 
 

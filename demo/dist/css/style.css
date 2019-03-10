@@ -1,5 +1,19 @@
 @charset "UTF-8";
 /**
+ * Get an icon in base64 url encoded format
+ * Available icons:
+ * - search
+ * - arrow-down
+ * - angle-down
+ * - angle-up
+ * - angle-left
+ * - angle-right
+ *
+ * @param    {String}    $icon    The icon name wanted
+ * @param    {String}    [$color="default"]    The color wanted
+ * @author    Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
+ */
+/**
  * Parse and return the Map respresentation of a border property
  * The $border argument will be parsed with the [s-parse-properties](../core/functions/_s-parse-properties.scss) function.
  *
@@ -15,7 +29,7 @@
  * // 	style : solid
  * // )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the Map representation of a columns properties
@@ -38,7 +52,7 @@
  * // 	column-gap : 20px
  * // )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Parse and return the Map respresentation of a margin property
@@ -52,7 +66,7 @@
  * s-margin-map(10px 20px); // => ( top:10px, right:20px, bottom:10px, left:20px )
  * s-margin-map(5px 10px 15px 20px); // => ( top:5px, right:10px, bottom:15px, left:20px )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the representation of a position styling like position:absolute; top:0; left:100%; etc...
@@ -74,7 +88,7 @@
  * s-position-map(absolute, bottom, center);
  * // etc...
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the Map properties representation for the rhythme width
@@ -91,7 +105,7 @@
  * // 	max-width : 50ex
  * // )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the Map properties representation of a translate x,y and z
@@ -108,7 +122,7 @@
  * // 	transform: translateX(10px) translateY(20px) translateZ(0)
  * // )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Helper mixin to set a background image
@@ -138,7 +152,7 @@
  * 		);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Apply some border radius
@@ -163,7 +177,7 @@
  * 	// etc...
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Center a block element using margins etc...
@@ -172,7 +186,7 @@
  * 	\@include s-center-block();
  * }
  *
- * @author 	Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 	Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * @name 	s-clearfix
@@ -190,7 +204,7 @@
  *  \@include s-clearfix();
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 .clearfix-overflow {
   overflow: hidden;
@@ -230,7 +244,7 @@
  * 	\@include s-coffeekraken-logo();
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Create a column layout my setting each columns properties at once
@@ -253,7 +267,7 @@
  * 	);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Apply some border radius
@@ -278,7 +292,7 @@
  * 	// etc...
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Make the element fit his container.
@@ -289,7 +303,7 @@
  * 	\@include s-fit(absolute);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Hide the contained text
@@ -299,7 +313,7 @@
  * 	\@include s-hide-text();
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Apply an icon on the element. This mixin support font-awesome and custom icons systems that have an icon name formated like "icon-{name}"
@@ -310,7 +324,7 @@
  * 	\@include s-icon(fa-user);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Set how to render the image
@@ -321,7 +335,7 @@
  * 	\@include s-image-rendering(crips-edges);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Set how the list bullet has to be displayed.
@@ -344,12 +358,12 @@
  * 	);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Start a new list
  * @param 		{String} 		[$counter-reset=s-list] 		A counter name to reset
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Easy to use media query mixin that support cssua classes to target specific browsers
@@ -380,7 +394,7 @@
  * 	// custom css here
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Set the placeholder style for inputs, etc...
@@ -392,7 +406,7 @@
  * 	}
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Set a complexe position styling like position:absolute; top:0; left:100%; etc...
@@ -419,21 +433,27 @@
  * 	// etc...
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Apply a ratio css styling. This will apply a before or after content that will make the element keep the specified ratio.
  * The content need to be displayed as absolute top left and fit in size.
  *
  * @param 		{Number} 		$ratio 			The ratio to keep like 16/9, etc...
- * @param 		{String} 		[$type=before] 	The type of ratio to apply. Can be before or after
  *
  * @example 	scss
  * .my-cool-element {
  * 	\@include s-ratio(16/9);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
+ */
+/**
+ * Register a new icon to be used as base64 encoded url.
+ * If you want your icon to be colorable, you need to specify this code on your paths: `style="fill:%color"`
+ * @param    {String}    $name    The icon name
+ * @param    {String}    $svgCode    The icons svg code
+ * @author    Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out a reset css
@@ -441,7 +461,7 @@
  *
  * \@include s-reset();
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out the css on a container that will make the lines displays a maximum number of characters.
@@ -451,7 +471,7 @@
  * 	\@include s-rhythm-width(45);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Apply some css to have a rounded element with already an overflow on it
@@ -480,7 +500,7 @@
  * 	\@include s-size(cover);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Quicky set some translates
@@ -493,7 +513,7 @@
  * 	\@include s-translate(50%, 20px);
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out the style to truncate the text if needed
@@ -503,7 +523,7 @@
  * 	\@include s-truncate-text();
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Vertically align content by using the inline-block middle trick
@@ -513,7 +533,7 @@
  * 	\@include s-vertical-aligner();
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Hide an element only visually. This ensure that the element is still correctly displayed in the page for SEO
@@ -524,7 +544,7 @@
  * 	\@include s-visually-hidden();
  * }
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Get a registered color by name or wrap a new color into a s-color call
@@ -540,6 +560,8 @@
  * - invert {Boolean}
  * - opacity {Percent}
  * - mix {Color}
+ * - lightness {Percent}
+ * - saturation {Percent}
  *
  * @param 		{String|Color} 		$color 				The color name or the color value to manipulate
  * @param 		{String|List} 			[$modifier=null] 	The color modifier to apply. Can be a registered modifier name or a modifier list
@@ -557,7 +579,7 @@
  * // $name as list
  * $modified primary : s-color((primary, -darken 10%));
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the color in a modifier list
@@ -567,7 +589,7 @@
  * @example
  * $my-color : s-color-modifier(outline primary); // => primary
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the name of the top level component setted with the [../mixins/_s-component.scss] mixin
@@ -584,7 +606,7 @@
  * 		}
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>;
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com);
  */
 /**
  * Convert a passed value to the wanted unit
@@ -625,7 +647,7 @@
  * s-convert(24px, rem) // 1.5rem
  * s-convert(3rem, pt) // 36pt
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Transform a dash notation value into a map
@@ -642,7 +664,7 @@
  * // 	coco : universe
  * // )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Convert the passed value to em
@@ -650,7 +672,7 @@
  * @param 			{Number} 		$value 		The value to convert
  * @return 			{Number} 					The em converted value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Convert the passed value to the closest even value
@@ -658,7 +680,7 @@
  * @param 			{Number} 		$value 		The value to convert
  * @return 			{Number} 					The closest even converted value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Take a filter as parameter and parse it to return the {Map} corresponding
@@ -689,7 +711,7 @@
  * // 	blur : 10px
  * // }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return a list with all the filters that are passed as argument
@@ -719,7 +741,7 @@
  * 		// filter : box-shadow(#000 0 0 10px) blur(30px) invert(100%);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the font-family string or a registered font
@@ -746,7 +768,7 @@
  * 		// font-family : 'Helvetica Neue';
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the font {Map} that correspond to the passed arguments
@@ -781,7 +803,7 @@
  * 		word-wrap : nowrap
  * // )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Check if the provided color is a registered one or not
@@ -815,7 +837,7 @@
  * s-interpolate($myStack, big) // 6rem cause specified in the $myStack value
  * s-interpolate($myStack, small) // 1.5rem => calculated like : 3rem * 0.5 = 1.5rem
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Check if the passed value is of a certain type
@@ -862,7 +884,7 @@
  * s-is(#fff #ddd, list-color) // => true
  * // etc...
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Alias to the [./_s-look-and-feel.scss] function
@@ -877,7 +899,7 @@
  * 		padding : s-lnf(padding-horizontal) s-lnf(padding-vertical);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return a settings.look-and-feel stack value
@@ -890,7 +912,7 @@
  * 		padding : s-look-and-feel(padding-horizontal) s-look-and-feel(padding-vertical);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the modular scale value based on the settings ```modular-scale.base``` and ```modular-scale.ratio```.
@@ -899,7 +921,7 @@
  * @param 			{Number} 		[$base=settings.modular-scale.base] 	The base of calculation
  * @return 			{Number} 					The calculated resulting value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Convert the passed value to the closest odd value
@@ -907,7 +929,7 @@
  * @param 			{Number} 		$value 		The value to convert
  * @return 			{Number} 					The closest odd converted value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Parse a given string/list properties and return the Map corresponding to the Map description
@@ -930,7 +952,7 @@
  * // 	delay : 20s
  * // )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Convert the passed value to %
@@ -938,7 +960,7 @@
  * @param 			{Number} 		$value 		The value to convert
  * @return 			{Number} 					The % converted value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Convert the passed value to pt
@@ -946,7 +968,7 @@
  * @param 			{Number} 		$value 		The value to convert
  * @return 			{Number} 					The pt converted value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Convert the passed value to px
@@ -954,7 +976,7 @@
  * @param 			{Number} 		$value 		The value to convert
  * @return 			{Number} 					The px converted value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Convert the passed value to rem
@@ -962,7 +984,7 @@
  * @param 			{Number} 		$value 		The value to convert
  * @return 			{Number} 					The rem converted value
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the passed values in the same unit but that has been even rounded on the corresponding px value
@@ -978,7 +1000,7 @@
  * // 2. round even the px value : 84px
  * // 3. transform to passed unit value : 84px / 16px = 5.25rem
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the passed values in the same unit but that has been odd rounded on the corresponding px value
@@ -994,7 +1016,7 @@
  * // 2. round odd the px value : 83px
  * // 3. transform to passed unit value : 84px / 16px = 5.1875rem
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the passed values in the same unit but that has been rounded on the corresponding px value
@@ -1010,7 +1032,7 @@
  * // 2. round even the px value : 83px
  * // 3. transform to passed unit value : 84px / 16px = 5.1875rem
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Search and replace tokens like colors #primary in a passed string, list or map
@@ -1020,7 +1042,7 @@
  * @example
  * s-replace-tokens(12px #primary hello #secondary); // > 12px #ddd hello #fff;
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Process selector to avoid having --default, etc...
@@ -1043,7 +1065,7 @@
  * $font-size : s-setting('typography.font-size');
  * // etc...
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return a value interpolated from the settings.spaces stack
@@ -1056,7 +1078,7 @@
  * 		padding : s-pace(big);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return a number without any units
@@ -1068,7 +1090,7 @@
  * s-strip-units(12px); // => 12
  * s-strip-units(30rem); // => 30
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Test an argument passed to a function or a mixin to ensure his type, value, etc...
@@ -1090,12 +1112,12 @@
  * \@mixin my-cool-mixin(hello, universe); // throw an error
  * \@mixin my-cool-mixin(12, world); // throw an error
  *
- * @author 				Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 				Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the text-format setting scope class
  * @return 		{String} 		The text-format scope class from settings.text-format.scope-class
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Take a transition as parameter and parse it to return the {Map} corresponding
@@ -1131,7 +1153,7 @@
  * // 	delay : .5s
  * // }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Take a transition as parameter and parse it to return the {List} corresponding
@@ -1162,18 +1184,18 @@
  *  	// transition : all .2s ease-in-out .5s, width .2s ease-in 0s;
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the unit context if has been set by the [s-unit-context mixin](../mixins/_s-unit-context.scss)
  *
  * @return 		{String} 				The unit context setted
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Return the vertical-rhythm setting scope class
  * @return 		{String} 		The vertical-rhythm scope class from settings.vertical-rhythm.scope-class
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Generic sugar function can return multiple settings types like:
@@ -1191,7 +1213,7 @@
  * $my-font-size : s('settings.typography.font.size')
  * // etc...
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out the animation property calculated with the passed arguments
@@ -1208,7 +1230,7 @@
  * 		// animation : my-animation 1s 0s ease-in-out 1 normal forwards, another-animation 4s 1s ease-in-out 1 normal forwards;
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out all wanted registered classes like padding helpers, margin helpers, font helpers, etc...
@@ -1303,7 +1325,7 @@
  * \@include s-classes('sugar.clearfix' 'sugar.pull'); // the clearfixes and the pull classes
  * // etc...
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out the scoped color schema css
@@ -1333,7 +1355,7 @@
  * 		color : white;
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Set the name of the component that will be handled inside the mixin
@@ -1349,7 +1371,7 @@
  * 		}
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>;
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com);
  */
 /**
  * Register a context with a name to use it later
@@ -1371,7 +1393,7 @@
  * 		s-look-and-feel(padding-vertical); // => 0.6em
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Set a context to be used inside the mixin
@@ -1404,7 +1426,7 @@
  * 		// your code here...
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out a list with all the filters that are passed as argument
@@ -1433,7 +1455,7 @@
  * 		// filter : box-shadow(#000 0 0 10px) blur(30px) invert(100%);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Helper to print a font-face
@@ -1452,7 +1474,7 @@
  * 		$extensions : eot woff woff2
  * )
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print all the fonts properties that correspond to the passed arguments
@@ -1488,7 +1510,7 @@
  * 		word-wrap : nowrap
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Init the sugar toolkit.
@@ -1498,7 +1520,7 @@
  * @example
  * \@include s-init();
  *
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Register all the dynamic helper classes that depends on the settings, etc...
@@ -1507,7 +1529,7 @@
  * @example
  * \@include s-init-classes();
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Register a helper class under a certain namespace
@@ -1526,7 +1548,7 @@
  * // print out my helpers classes
  * \@include s-classes('my');
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Setup sugar toolkit by overriding the default [settings](../_settings.scss)
@@ -1548,7 +1570,7 @@
  * // this allows you to separate your configs setup into multiple
  * // files...
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Display the vertical rhythme
@@ -1560,7 +1582,7 @@
  * 		@include s-show-vertical-rhythm();
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Take a transition as parameter and print the corresponding transition property
@@ -1591,7 +1613,7 @@
  *  	// transition : all .2s ease-in-out .5s, width .2s ease-in 0s;
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Set the unit context to use inside the mixin.
@@ -1607,7 +1629,7 @@
  * 		s-setting('typography.font-size'); // => 1rem
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * @name 	s-vertical-rhythm
@@ -1620,7 +1642,7 @@
  * }
  *
  * @see 			https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b#.lck2lgbni
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * @name 	Helper Classes
@@ -1666,6 +1688,7 @@
  * - sugar.size.abs.cover : ```.abs-cover```
  * - sugar.size.abs.contain : ```.abs-contain```
  * - sugar.size.abs.fit : ```.abs-fit```
+ * - sugar.media.object : ```.mo .mo--center .mo--end .mo__content```
  * - sugar.clearfix.default : ```.clearfix```
  * - sugar.clearfix.float : ```.clearfix-float```
  * - sugar.clearfix.micro : ```.clearfix-micro```
@@ -1678,7 +1701,7 @@
  * - sugar.no-transmations : ```.no-transmations```
  * - sugar.clear-transmations : ```.clear-transmations```
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 .pull-left {
   /**
@@ -2209,6 +2232,38 @@
   left: 0;
 }
 
+.mo {
+  /**
+	 * @name 		```.mo .mo--center .mo__content```
+	 * Famous media object class
+	 * @styleguide 	Helpers / Media object
+	 * @example 	html
+	 * <div class="mo">
+	 *   <div class="mo__content">
+	 *     <img src="https://source.unsplash.com/random/100x100" />
+	 *   </div>
+	 *   <div class="mo__content">
+	 *     <h2 class="h3">Hello World</h2>
+	 *     <p class="p">Phasellus fringilla aliquet justo eget pulvinar. Donec in justo leo.</p>
+	 *   </div>
+	 * </div>
+	 */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.mo--center {
+  align-items: center;
+}
+
+.mo--end {
+  align-items: flex-end;
+}
+
+.mo__content {
+  flex: 0 1 auto;
+}
+
 .clearfix {
   /**
 	 * @name 		```.clearfix```
@@ -2293,14 +2348,18 @@
 	 * <div class="bkg-primary ratio-21-9"></div>
 	 */
   position: relative;
-  overflow: hidden;
 }
 
-.ratio-21-9:before {
+.ratio-21-9::before {
+  content: '';
+  padding-top: 42.85714%;
+  float: left;
+}
+
+.ratio-21-9::after {
   content: '';
   display: block;
-  height: 0;
-  padding-top: 42.85714%;
+  clear: both;
 }
 
 .ratio-16-9 {
@@ -2312,14 +2371,18 @@
 	 * <div class="bkg-primary ratio-16-9"></div>
 	 */
   position: relative;
-  overflow: hidden;
 }
 
-.ratio-16-9:before {
+.ratio-16-9::before {
+  content: '';
+  padding-top: 56.25%;
+  float: left;
+}
+
+.ratio-16-9::after {
   content: '';
   display: block;
-  height: 0;
-  padding-top: 56.25%;
+  clear: both;
 }
 
 .ratio-4-3 {
@@ -2331,14 +2394,18 @@
 	 * <div class="bkg-primary ratio-4-3"></div>
 	 */
   position: relative;
-  overflow: hidden;
 }
 
-.ratio-4-3:before {
+.ratio-4-3::before {
+  content: '';
+  padding-top: 75%;
+  float: left;
+}
+
+.ratio-4-3::after {
   content: '';
   display: block;
-  height: 0;
-  padding-top: 75%;
+  clear: both;
 }
 
 .ratio-1-1 {
@@ -2350,14 +2417,18 @@
 	 * <div class="bkg-primary ratio-1-1"></div>
 	 */
   position: relative;
-  overflow: hidden;
 }
 
-.ratio-1-1:before {
+.ratio-1-1::before {
+  content: '';
+  padding-top: 100%;
+  float: left;
+}
+
+.ratio-1-1::after {
   content: '';
   display: block;
-  height: 0;
-  padding-top: 100%;
+  clear: both;
 }
 
 .no-transitions {
@@ -2470,7 +2541,7 @@
 /**
  * This file contains all the default settings that can be overrided by the [s-setup mixin](./mixins/_s-setup.scss).
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Create an arrow bubble effect
@@ -2492,7 +2563,7 @@
  * }
  *
  * @see 			https://codepen.io/kirkas/pen/otqyJ
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Generate a drop shadow depending on the depth specified
@@ -2505,7 +2576,7 @@
  * 		\@include s-depth(2);
  * }
  *
- * @author 	 		Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 	 		Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Create a poping dot effect to catch user attention on a particular item
@@ -2531,7 +2602,7 @@
  * 		);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Generate a full animated, single element, bars loader
@@ -2560,7 +2631,7 @@
  * 		);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Generate a full animated, single element, circle loader
@@ -2578,7 +2649,7 @@
  *
  * @TODO finish documentation
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Generate a full animated, single element, couch-potato style loader
@@ -2596,7 +2667,7 @@
  * 		\@include s-loader-couch-potato();
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Generate a full animated, single element, flip ball style loader
@@ -2613,7 +2684,7 @@
  * 		\@include s-loader-flip-ball();
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Generate a long shadow effect like [this](https://www.google.ch/search?q=long+shadow&espv=2&biw=2560&bih=1316&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjjne6x49LPAhVBHRQKHat8AW8Q_AUIBigB)
@@ -2638,7 +2709,7 @@
  * 		);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Create side lines around an item
@@ -2660,7 +2731,7 @@
  * 		);
  * }
  *
- * @author 			Olivier Bossel <olivier.bossel@gmail.com>
+ * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * @name 	STypographyComponent
@@ -3034,7 +3105,7 @@ table {
 		 * @display 	color
 		 */
 .s-settings:after {
-  content: '{"unit": "rem", "reset": true, "border-box": true, "sizes": {"smaller": 0.3, "small": 0.6, "default": 1, "medium": 1.4, "big": 2, "bigger": 3}, "typography": {"font-family": "default", "font-size": "14px", "font-sizes": null, "line-letters-count": 55, "font-format": {"eot": "embedded-opentype", "woff2": "woff2", "woff": "woff", "ttf": "truetype", "otf": "opentype", "svg": "svg", "svgz": "svgz"}}, "look-and-feel": {"border-radius": "0em", "padding-vertical": "1.4em", "padding-horizontal": "0.8em", "disabled-opacity": 0.5, "line-height": 1.4}, "spaces": {"default": "1rem"}, "colors": {"default": {"color": "#848e91"}, "title": {"color": "#2b3438"}, "text": {"color": "default"}, "link": {"color": "primary"}, "primary": {"color": "#f2bc2b"}, "secondary": {"color": "#2b3438"}, "success": {"color": "#5cb85c"}, "warning": {"color": "#f0ad4e"}, "error": {"color": "#d9534f"}, "info": {"color": "#2199e8"}}, "modular-scale": {"base": "1rem", "ratio": 1.33}, "text-format": {"scope-class": "tf"}, "vertical-rhythm": {"scope-class": "vr"}, "fonts": {"default": {"font-family": ["Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif"], "font-weight": "normal", "cap-height": 0.65}, "quote": {"font-family": ["Palatino", "Times", "Georgia", "serif"], "font-weight": "normal", "cap-height": 0.65}, "code": {"font-family": ["Menlo", "Monaco", "Consolas", "Courier New", "monospace"], "font-weight": "normal", "cap-height": 0.65}}, "filters": [], "transitions": {"fast": ["all", "0.1s", "ease-in-out", "0s"], "default": ["all", "0.2s", "ease-in-out", "0s"], "slow": ["all", "0.5s", "ease-in-out", "0s"]}}';
+  content: '{"unit": "rem", "reset": true, "border-box": true, "sizes": {"smaller": 0.3, "small": 0.6, "default": 1, "medium": 1.4, "big": 2, "bigger": 3}, "typography": {"font-family": "default", "font-size": "14px", "font-sizes": null, "line-letters-count": 55, "font-format": {"eot": "embedded-opentype", "woff2": "woff2", "woff": "woff", "ttf": "truetype", "otf": "opentype", "svg": "svg", "svgz": "svgz"}}, "look-and-feel": {"border-radius": "0em", "padding-vertical": "1.4em", "padding-horizontal": "0.8em", "disabled-opacity": 0.5, "line-height": 1.4}, "spaces": {"smaller": "5px", "small": "10px", "default": "20px", "medium": "40px", "big": "70px", "bigger": "100px"}, "colors": {"default": {"color": "#848e91"}, "title": {"color": "#2b3438"}, "text": {"color": "default"}, "link": {"color": "primary"}, "primary": {"color": "#f2bc2b"}, "secondary": {"color": "#2b3438"}, "success": {"color": "#5cb85c"}, "warning": {"color": "#f0ad4e"}, "error": {"color": "#d9534f"}, "info": {"color": "#2199e8"}}, "modular-scale": {"base": "1rem", "ratio": 1.33}, "text-format": {"scope-class": "tf"}, "vertical-rhythm": {"scope-class": "vr"}, "fonts": {"default": {"font-family": ["Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif"], "font-weight": "normal", "cap-height": 0.65}, "quote": {"font-family": ["Palatino", "Times", "Georgia", "serif"], "font-weight": "normal", "cap-height": 0.65}, "code": {"font-family": ["Menlo", "Monaco", "Consolas", "Courier New", "monospace"], "font-weight": "normal", "cap-height": 0.65}}, "filters": [], "transitions": {"fast": ["all", "0.1s", "ease-in-out", "0s"], "default": ["all", "0.2s", "ease-in-out", "0s"], "slow": ["all", "0.5s", "ease-in-out", "0s"]}}';
   display: none;
 }
 
@@ -3173,7 +3244,7 @@ body {
 			 * <div style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-b-smaller {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35714rem;
 }
 
 /**
@@ -3184,7 +3255,7 @@ body {
 			 * <div class="m-t-smaller" style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-t-smaller {
-  margin-top: 0.3rem;
+  margin-top: 0.35714rem;
 }
 
 /**
@@ -3195,7 +3266,7 @@ body {
 			 * <div class="m-l-smaller" style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-l-smaller {
-  margin-left: 0.3rem;
+  margin-left: 0.35714rem;
 }
 
 /**
@@ -3206,7 +3277,7 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-r-smaller {
-  margin-right: 0.3rem;
+  margin-right: 0.35714rem;
 }
 
 /**
@@ -3217,8 +3288,8 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-s-smaller {
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+  margin-left: 0.35714rem;
+  margin-right: 0.35714rem;
 }
 
 /**
@@ -3230,7 +3301,7 @@ body {
 			 * </div>
 			 */
 .p-smaller {
-  padding: 0.3rem;
+  padding: 0.35714rem;
 }
 
 /**
@@ -3242,7 +3313,7 @@ body {
 			 * </div>
 			 */
 .p-b-smaller {
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.35714rem;
 }
 
 /**
@@ -3254,7 +3325,7 @@ body {
 			 * </div>
 			 */
 .p-t-smaller {
-  padding-top: 0.3rem;
+  padding-top: 0.35714rem;
 }
 
 /**
@@ -3266,7 +3337,7 @@ body {
 			 * </div>
 			 */
 .p-l-smaller {
-  padding-left: 0.3rem;
+  padding-left: 0.35714rem;
 }
 
 /**
@@ -3278,7 +3349,7 @@ body {
 			 * </div>
 			 */
 .p-r-smaller {
-  padding-right: 0.3rem;
+  padding-right: 0.35714rem;
 }
 
 /**
@@ -3290,8 +3361,8 @@ body {
 			 * </div>
 			 */
 .p-s-smaller {
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  padding-left: 0.35714rem;
+  padding-right: 0.35714rem;
 }
 
 /**
@@ -3302,7 +3373,7 @@ body {
 			 * <div style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-b-small {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.71429rem;
 }
 
 /**
@@ -3313,7 +3384,7 @@ body {
 			 * <div class="m-t-small" style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-t-small {
-  margin-top: 0.6rem;
+  margin-top: 0.71429rem;
 }
 
 /**
@@ -3324,7 +3395,7 @@ body {
 			 * <div class="m-l-small" style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-l-small {
-  margin-left: 0.6rem;
+  margin-left: 0.71429rem;
 }
 
 /**
@@ -3335,7 +3406,7 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-r-small {
-  margin-right: 0.6rem;
+  margin-right: 0.71429rem;
 }
 
 /**
@@ -3346,8 +3417,8 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-s-small {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
+  margin-left: 0.71429rem;
+  margin-right: 0.71429rem;
 }
 
 /**
@@ -3359,7 +3430,7 @@ body {
 			 * </div>
 			 */
 .p-small {
-  padding: 0.6rem;
+  padding: 0.71429rem;
 }
 
 /**
@@ -3371,7 +3442,7 @@ body {
 			 * </div>
 			 */
 .p-b-small {
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.71429rem;
 }
 
 /**
@@ -3383,7 +3454,7 @@ body {
 			 * </div>
 			 */
 .p-t-small {
-  padding-top: 0.6rem;
+  padding-top: 0.71429rem;
 }
 
 /**
@@ -3395,7 +3466,7 @@ body {
 			 * </div>
 			 */
 .p-l-small {
-  padding-left: 0.6rem;
+  padding-left: 0.71429rem;
 }
 
 /**
@@ -3407,7 +3478,7 @@ body {
 			 * </div>
 			 */
 .p-r-small {
-  padding-right: 0.6rem;
+  padding-right: 0.71429rem;
 }
 
 /**
@@ -3419,8 +3490,8 @@ body {
 			 * </div>
 			 */
 .p-s-small {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  padding-left: 0.71429rem;
+  padding-right: 0.71429rem;
 }
 
 /**
@@ -3431,7 +3502,7 @@ body {
 			 * <div style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-b {
-  margin-bottom: 1rem;
+  margin-bottom: 1.42857rem;
 }
 
 /**
@@ -3442,7 +3513,7 @@ body {
 			 * <div class="m-t" style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-t {
-  margin-top: 1rem;
+  margin-top: 1.42857rem;
 }
 
 /**
@@ -3453,7 +3524,7 @@ body {
 			 * <div class="m-l" style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-l {
-  margin-left: 1rem;
+  margin-left: 1.42857rem;
 }
 
 /**
@@ -3464,7 +3535,7 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-r {
-  margin-right: 1rem;
+  margin-right: 1.42857rem;
 }
 
 /**
@@ -3475,8 +3546,8 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-s {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 1.42857rem;
+  margin-right: 1.42857rem;
 }
 
 /**
@@ -3488,7 +3559,7 @@ body {
 			 * </div>
 			 */
 .p:not(p) {
-  padding: 1rem;
+  padding: 1.42857rem;
 }
 
 /**
@@ -3500,7 +3571,7 @@ body {
 			 * </div>
 			 */
 .p-b {
-  padding-bottom: 1rem;
+  padding-bottom: 1.42857rem;
 }
 
 /**
@@ -3512,7 +3583,7 @@ body {
 			 * </div>
 			 */
 .p-t {
-  padding-top: 1rem;
+  padding-top: 1.42857rem;
 }
 
 /**
@@ -3524,7 +3595,7 @@ body {
 			 * </div>
 			 */
 .p-l {
-  padding-left: 1rem;
+  padding-left: 1.42857rem;
 }
 
 /**
@@ -3536,7 +3607,7 @@ body {
 			 * </div>
 			 */
 .p-r {
-  padding-right: 1rem;
+  padding-right: 1.42857rem;
 }
 
 /**
@@ -3548,8 +3619,8 @@ body {
 			 * </div>
 			 */
 .p-s {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.42857rem;
+  padding-right: 1.42857rem;
 }
 
 /**
@@ -3560,7 +3631,7 @@ body {
 			 * <div style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-b-medium {
-  margin-bottom: 1.4rem;
+  margin-bottom: 2.85714rem;
 }
 
 /**
@@ -3571,7 +3642,7 @@ body {
 			 * <div class="m-t-medium" style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-t-medium {
-  margin-top: 1.4rem;
+  margin-top: 2.85714rem;
 }
 
 /**
@@ -3582,7 +3653,7 @@ body {
 			 * <div class="m-l-medium" style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-l-medium {
-  margin-left: 1.4rem;
+  margin-left: 2.85714rem;
 }
 
 /**
@@ -3593,7 +3664,7 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-r-medium {
-  margin-right: 1.4rem;
+  margin-right: 2.85714rem;
 }
 
 /**
@@ -3604,8 +3675,8 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-s-medium {
-  margin-left: 1.4rem;
-  margin-right: 1.4rem;
+  margin-left: 2.85714rem;
+  margin-right: 2.85714rem;
 }
 
 /**
@@ -3617,7 +3688,7 @@ body {
 			 * </div>
 			 */
 .p-medium {
-  padding: 1.4rem;
+  padding: 2.85714rem;
 }
 
 /**
@@ -3629,7 +3700,7 @@ body {
 			 * </div>
 			 */
 .p-b-medium {
-  padding-bottom: 1.4rem;
+  padding-bottom: 2.85714rem;
 }
 
 /**
@@ -3641,7 +3712,7 @@ body {
 			 * </div>
 			 */
 .p-t-medium {
-  padding-top: 1.4rem;
+  padding-top: 2.85714rem;
 }
 
 /**
@@ -3653,7 +3724,7 @@ body {
 			 * </div>
 			 */
 .p-l-medium {
-  padding-left: 1.4rem;
+  padding-left: 2.85714rem;
 }
 
 /**
@@ -3665,7 +3736,7 @@ body {
 			 * </div>
 			 */
 .p-r-medium {
-  padding-right: 1.4rem;
+  padding-right: 2.85714rem;
 }
 
 /**
@@ -3677,8 +3748,8 @@ body {
 			 * </div>
 			 */
 .p-s-medium {
-  padding-left: 1.4rem;
-  padding-right: 1.4rem;
+  padding-left: 2.85714rem;
+  padding-right: 2.85714rem;
 }
 
 /**
@@ -3689,7 +3760,7 @@ body {
 			 * <div style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-b-big {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 /**
@@ -3700,7 +3771,7 @@ body {
 			 * <div class="m-t-big" style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-t-big {
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 /**
@@ -3711,7 +3782,7 @@ body {
 			 * <div class="m-l-big" style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-l-big {
-  margin-left: 2rem;
+  margin-left: 5rem;
 }
 
 /**
@@ -3722,7 +3793,7 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-r-big {
-  margin-right: 2rem;
+  margin-right: 5rem;
 }
 
 /**
@@ -3733,8 +3804,8 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-s-big {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 /**
@@ -3746,7 +3817,7 @@ body {
 			 * </div>
 			 */
 .p-big {
-  padding: 2rem;
+  padding: 5rem;
 }
 
 /**
@@ -3758,7 +3829,7 @@ body {
 			 * </div>
 			 */
 .p-b-big {
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 
 /**
@@ -3770,7 +3841,7 @@ body {
 			 * </div>
 			 */
 .p-t-big {
-  padding-top: 2rem;
+  padding-top: 5rem;
 }
 
 /**
@@ -3782,7 +3853,7 @@ body {
 			 * </div>
 			 */
 .p-l-big {
-  padding-left: 2rem;
+  padding-left: 5rem;
 }
 
 /**
@@ -3794,7 +3865,7 @@ body {
 			 * </div>
 			 */
 .p-r-big {
-  padding-right: 2rem;
+  padding-right: 5rem;
 }
 
 /**
@@ -3806,8 +3877,8 @@ body {
 			 * </div>
 			 */
 .p-s-big {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 /**
@@ -3818,7 +3889,7 @@ body {
 			 * <div style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-b-bigger {
-  margin-bottom: 3rem;
+  margin-bottom: 7.14286rem;
 }
 
 /**
@@ -3829,7 +3900,7 @@ body {
 			 * <div class="m-t-bigger" style="background:#2b3438; width:100px; height:5px"></div>
 			 */
 .m-t-bigger {
-  margin-top: 3rem;
+  margin-top: 7.14286rem;
 }
 
 /**
@@ -3840,7 +3911,7 @@ body {
 			 * <div class="m-l-bigger" style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-l-bigger {
-  margin-left: 3rem;
+  margin-left: 7.14286rem;
 }
 
 /**
@@ -3851,7 +3922,7 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-r-bigger {
-  margin-right: 3rem;
+  margin-right: 7.14286rem;
 }
 
 /**
@@ -3862,8 +3933,8 @@ body {
 			 * <div style="display:inline-block; background:#2b3438; width:50px; height:50px"></div>
 			 */
 .m-s-bigger {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 7.14286rem;
+  margin-right: 7.14286rem;
 }
 
 /**
@@ -3875,7 +3946,7 @@ body {
 			 * </div>
 			 */
 .p-bigger {
-  padding: 3rem;
+  padding: 7.14286rem;
 }
 
 /**
@@ -3887,7 +3958,7 @@ body {
 			 * </div>
 			 */
 .p-b-bigger {
-  padding-bottom: 3rem;
+  padding-bottom: 7.14286rem;
 }
 
 /**
@@ -3899,7 +3970,7 @@ body {
 			 * </div>
 			 */
 .p-t-bigger {
-  padding-top: 3rem;
+  padding-top: 7.14286rem;
 }
 
 /**
@@ -3911,7 +3982,7 @@ body {
 			 * </div>
 			 */
 .p-l-bigger {
-  padding-left: 3rem;
+  padding-left: 7.14286rem;
 }
 
 /**
@@ -3923,7 +3994,7 @@ body {
 			 * </div>
 			 */
 .p-r-bigger {
-  padding-right: 3rem;
+  padding-right: 7.14286rem;
 }
 
 /**
@@ -3935,8 +4006,8 @@ body {
 			 * </div>
 			 */
 .p-s-bigger {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 7.14286rem;
+  padding-right: 7.14286rem;
 }
 
 /**
@@ -4222,6 +4293,85 @@ body {
 }
 
 /**
+				 * @name 	```.b-default```
+				 * Specify the border of 1px solid to **default**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-default">
+				 * 	I have a default border color
+				 * </div>
+				 */
+.b-default {
+  border: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-t-default```
+				 * Specify the border top of 1px solid to **default**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-default">
+				 * 	I have a default border top color
+				 * </div>
+				 */
+.b-t-default {
+  border-top: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-r-default```
+				 * Specify the border right of 1px solid to **default**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-default">
+				 * 	I have a default border right color
+				 * </div>
+				 */
+.b-r-default {
+  border-right: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-b-default```
+				 * Specify the border bottom of 1px solid to **default**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-default">
+				 * 	I have a default border bottom color
+				 * </div>
+				 */
+.b-b-default {
+  border-bottom: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-l-default```
+				 * Specify the border left of 1px solid to **default**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-default">
+				 * 	I have a default border left color
+				 * </div>
+				 */
+.b-l-default {
+  border-left: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-s-default```
+				 * Specify the border side of 1px solid to **default**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-default">
+				 * 	I have a default border side color
+				 * </div>
+				 */
+.b-s-default {
+  border-left: 0.07143rem solid #848e91;
+  border-right: 0.07143rem solid #848e91;
+}
+
+/**
 				 * @name 	```.c-title```
 				 * Specify the color to **title**
 				 * @styleguide  	Colors / Classes
@@ -4245,6 +4395,85 @@ body {
 				 */
 .bkg-title {
   background-color: #2b3438;
+}
+
+/**
+				 * @name 	```.b-title```
+				 * Specify the border of 1px solid to **title**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-title">
+				 * 	I have a title border color
+				 * </div>
+				 */
+.b-title {
+  border: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-t-title```
+				 * Specify the border top of 1px solid to **title**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-title">
+				 * 	I have a title border top color
+				 * </div>
+				 */
+.b-t-title {
+  border-top: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-r-title```
+				 * Specify the border right of 1px solid to **title**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-title">
+				 * 	I have a title border right color
+				 * </div>
+				 */
+.b-r-title {
+  border-right: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-b-title```
+				 * Specify the border bottom of 1px solid to **title**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-title">
+				 * 	I have a title border bottom color
+				 * </div>
+				 */
+.b-b-title {
+  border-bottom: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-l-title```
+				 * Specify the border left of 1px solid to **title**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-title">
+				 * 	I have a title border left color
+				 * </div>
+				 */
+.b-l-title {
+  border-left: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-s-title```
+				 * Specify the border side of 1px solid to **title**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-title">
+				 * 	I have a title border side color
+				 * </div>
+				 */
+.b-s-title {
+  border-left: 0.07143rem solid #2b3438;
+  border-right: 0.07143rem solid #2b3438;
 }
 
 /**
@@ -4274,6 +4503,85 @@ body {
 }
 
 /**
+				 * @name 	```.b-text```
+				 * Specify the border of 1px solid to **text**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-text">
+				 * 	I have a text border color
+				 * </div>
+				 */
+.b-text {
+  border: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-t-text```
+				 * Specify the border top of 1px solid to **text**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-text">
+				 * 	I have a text border top color
+				 * </div>
+				 */
+.b-t-text {
+  border-top: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-r-text```
+				 * Specify the border right of 1px solid to **text**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-text">
+				 * 	I have a text border right color
+				 * </div>
+				 */
+.b-r-text {
+  border-right: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-b-text```
+				 * Specify the border bottom of 1px solid to **text**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-text">
+				 * 	I have a text border bottom color
+				 * </div>
+				 */
+.b-b-text {
+  border-bottom: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-l-text```
+				 * Specify the border left of 1px solid to **text**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-text">
+				 * 	I have a text border left color
+				 * </div>
+				 */
+.b-l-text {
+  border-left: 0.07143rem solid #848e91;
+}
+
+/**
+				 * @name 	```.b-s-text```
+				 * Specify the border side of 1px solid to **text**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-text">
+				 * 	I have a text border side color
+				 * </div>
+				 */
+.b-s-text {
+  border-left: 0.07143rem solid #848e91;
+  border-right: 0.07143rem solid #848e91;
+}
+
+/**
 				 * @name 	```.c-link```
 				 * Specify the color to **link**
 				 * @styleguide  	Colors / Classes
@@ -4297,6 +4605,85 @@ body {
 				 */
 .bkg-link {
   background-color: #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-link```
+				 * Specify the border of 1px solid to **link**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-link">
+				 * 	I have a link border color
+				 * </div>
+				 */
+.b-link {
+  border: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-t-link```
+				 * Specify the border top of 1px solid to **link**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-link">
+				 * 	I have a link border top color
+				 * </div>
+				 */
+.b-t-link {
+  border-top: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-r-link```
+				 * Specify the border right of 1px solid to **link**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-link">
+				 * 	I have a link border right color
+				 * </div>
+				 */
+.b-r-link {
+  border-right: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-b-link```
+				 * Specify the border bottom of 1px solid to **link**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-link">
+				 * 	I have a link border bottom color
+				 * </div>
+				 */
+.b-b-link {
+  border-bottom: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-l-link```
+				 * Specify the border left of 1px solid to **link**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-link">
+				 * 	I have a link border left color
+				 * </div>
+				 */
+.b-l-link {
+  border-left: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-s-link```
+				 * Specify the border side of 1px solid to **link**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-link">
+				 * 	I have a link border side color
+				 * </div>
+				 */
+.b-s-link {
+  border-left: 0.07143rem solid #f2bc2b;
+  border-right: 0.07143rem solid #f2bc2b;
 }
 
 /**
@@ -4326,6 +4713,85 @@ body {
 }
 
 /**
+				 * @name 	```.b-primary```
+				 * Specify the border of 1px solid to **primary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-primary">
+				 * 	I have a primary border color
+				 * </div>
+				 */
+.b-primary {
+  border: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-t-primary```
+				 * Specify the border top of 1px solid to **primary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-primary">
+				 * 	I have a primary border top color
+				 * </div>
+				 */
+.b-t-primary {
+  border-top: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-r-primary```
+				 * Specify the border right of 1px solid to **primary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-primary">
+				 * 	I have a primary border right color
+				 * </div>
+				 */
+.b-r-primary {
+  border-right: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-b-primary```
+				 * Specify the border bottom of 1px solid to **primary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-primary">
+				 * 	I have a primary border bottom color
+				 * </div>
+				 */
+.b-b-primary {
+  border-bottom: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-l-primary```
+				 * Specify the border left of 1px solid to **primary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-primary">
+				 * 	I have a primary border left color
+				 * </div>
+				 */
+.b-l-primary {
+  border-left: 0.07143rem solid #f2bc2b;
+}
+
+/**
+				 * @name 	```.b-s-primary```
+				 * Specify the border side of 1px solid to **primary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-primary">
+				 * 	I have a primary border side color
+				 * </div>
+				 */
+.b-s-primary {
+  border-left: 0.07143rem solid #f2bc2b;
+  border-right: 0.07143rem solid #f2bc2b;
+}
+
+/**
 				 * @name 	```.c-secondary```
 				 * Specify the color to **secondary**
 				 * @styleguide  	Colors / Classes
@@ -4349,6 +4815,85 @@ body {
 				 */
 .bkg-secondary {
   background-color: #2b3438;
+}
+
+/**
+				 * @name 	```.b-secondary```
+				 * Specify the border of 1px solid to **secondary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-secondary">
+				 * 	I have a secondary border color
+				 * </div>
+				 */
+.b-secondary {
+  border: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-t-secondary```
+				 * Specify the border top of 1px solid to **secondary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-secondary">
+				 * 	I have a secondary border top color
+				 * </div>
+				 */
+.b-t-secondary {
+  border-top: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-r-secondary```
+				 * Specify the border right of 1px solid to **secondary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-secondary">
+				 * 	I have a secondary border right color
+				 * </div>
+				 */
+.b-r-secondary {
+  border-right: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-b-secondary```
+				 * Specify the border bottom of 1px solid to **secondary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-secondary">
+				 * 	I have a secondary border bottom color
+				 * </div>
+				 */
+.b-b-secondary {
+  border-bottom: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-l-secondary```
+				 * Specify the border left of 1px solid to **secondary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-secondary">
+				 * 	I have a secondary border left color
+				 * </div>
+				 */
+.b-l-secondary {
+  border-left: 0.07143rem solid #2b3438;
+}
+
+/**
+				 * @name 	```.b-s-secondary```
+				 * Specify the border side of 1px solid to **secondary**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-secondary">
+				 * 	I have a secondary border side color
+				 * </div>
+				 */
+.b-s-secondary {
+  border-left: 0.07143rem solid #2b3438;
+  border-right: 0.07143rem solid #2b3438;
 }
 
 /**
@@ -4378,6 +4923,85 @@ body {
 }
 
 /**
+				 * @name 	```.b-success```
+				 * Specify the border of 1px solid to **success**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-success">
+				 * 	I have a success border color
+				 * </div>
+				 */
+.b-success {
+  border: 0.07143rem solid #5cb85c;
+}
+
+/**
+				 * @name 	```.b-t-success```
+				 * Specify the border top of 1px solid to **success**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-success">
+				 * 	I have a success border top color
+				 * </div>
+				 */
+.b-t-success {
+  border-top: 0.07143rem solid #5cb85c;
+}
+
+/**
+				 * @name 	```.b-r-success```
+				 * Specify the border right of 1px solid to **success**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-success">
+				 * 	I have a success border right color
+				 * </div>
+				 */
+.b-r-success {
+  border-right: 0.07143rem solid #5cb85c;
+}
+
+/**
+				 * @name 	```.b-b-success```
+				 * Specify the border bottom of 1px solid to **success**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-success">
+				 * 	I have a success border bottom color
+				 * </div>
+				 */
+.b-b-success {
+  border-bottom: 0.07143rem solid #5cb85c;
+}
+
+/**
+				 * @name 	```.b-l-success```
+				 * Specify the border left of 1px solid to **success**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-success">
+				 * 	I have a success border left color
+				 * </div>
+				 */
+.b-l-success {
+  border-left: 0.07143rem solid #5cb85c;
+}
+
+/**
+				 * @name 	```.b-s-success```
+				 * Specify the border side of 1px solid to **success**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-success">
+				 * 	I have a success border side color
+				 * </div>
+				 */
+.b-s-success {
+  border-left: 0.07143rem solid #5cb85c;
+  border-right: 0.07143rem solid #5cb85c;
+}
+
+/**
 				 * @name 	```.c-warning```
 				 * Specify the color to **warning**
 				 * @styleguide  	Colors / Classes
@@ -4401,6 +5025,85 @@ body {
 				 */
 .bkg-warning {
   background-color: #f0ad4e;
+}
+
+/**
+				 * @name 	```.b-warning```
+				 * Specify the border of 1px solid to **warning**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-warning">
+				 * 	I have a warning border color
+				 * </div>
+				 */
+.b-warning {
+  border: 0.07143rem solid #f0ad4e;
+}
+
+/**
+				 * @name 	```.b-t-warning```
+				 * Specify the border top of 1px solid to **warning**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-warning">
+				 * 	I have a warning border top color
+				 * </div>
+				 */
+.b-t-warning {
+  border-top: 0.07143rem solid #f0ad4e;
+}
+
+/**
+				 * @name 	```.b-r-warning```
+				 * Specify the border right of 1px solid to **warning**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-warning">
+				 * 	I have a warning border right color
+				 * </div>
+				 */
+.b-r-warning {
+  border-right: 0.07143rem solid #f0ad4e;
+}
+
+/**
+				 * @name 	```.b-b-warning```
+				 * Specify the border bottom of 1px solid to **warning**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-warning">
+				 * 	I have a warning border bottom color
+				 * </div>
+				 */
+.b-b-warning {
+  border-bottom: 0.07143rem solid #f0ad4e;
+}
+
+/**
+				 * @name 	```.b-l-warning```
+				 * Specify the border left of 1px solid to **warning**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-warning">
+				 * 	I have a warning border left color
+				 * </div>
+				 */
+.b-l-warning {
+  border-left: 0.07143rem solid #f0ad4e;
+}
+
+/**
+				 * @name 	```.b-s-warning```
+				 * Specify the border side of 1px solid to **warning**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-warning">
+				 * 	I have a warning border side color
+				 * </div>
+				 */
+.b-s-warning {
+  border-left: 0.07143rem solid #f0ad4e;
+  border-right: 0.07143rem solid #f0ad4e;
 }
 
 /**
@@ -4430,6 +5133,85 @@ body {
 }
 
 /**
+				 * @name 	```.b-error```
+				 * Specify the border of 1px solid to **error**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-error">
+				 * 	I have a error border color
+				 * </div>
+				 */
+.b-error {
+  border: 0.07143rem solid #d9534f;
+}
+
+/**
+				 * @name 	```.b-t-error```
+				 * Specify the border top of 1px solid to **error**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-error">
+				 * 	I have a error border top color
+				 * </div>
+				 */
+.b-t-error {
+  border-top: 0.07143rem solid #d9534f;
+}
+
+/**
+				 * @name 	```.b-r-error```
+				 * Specify the border right of 1px solid to **error**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-error">
+				 * 	I have a error border right color
+				 * </div>
+				 */
+.b-r-error {
+  border-right: 0.07143rem solid #d9534f;
+}
+
+/**
+				 * @name 	```.b-b-error```
+				 * Specify the border bottom of 1px solid to **error**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-error">
+				 * 	I have a error border bottom color
+				 * </div>
+				 */
+.b-b-error {
+  border-bottom: 0.07143rem solid #d9534f;
+}
+
+/**
+				 * @name 	```.b-l-error```
+				 * Specify the border left of 1px solid to **error**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-error">
+				 * 	I have a error border left color
+				 * </div>
+				 */
+.b-l-error {
+  border-left: 0.07143rem solid #d9534f;
+}
+
+/**
+				 * @name 	```.b-s-error```
+				 * Specify the border side of 1px solid to **error**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-error">
+				 * 	I have a error border side color
+				 * </div>
+				 */
+.b-s-error {
+  border-left: 0.07143rem solid #d9534f;
+  border-right: 0.07143rem solid #d9534f;
+}
+
+/**
 				 * @name 	```.c-info```
 				 * Specify the color to **info**
 				 * @styleguide  	Colors / Classes
@@ -4456,6 +5238,85 @@ body {
 }
 
 /**
+				 * @name 	```.b-info```
+				 * Specify the border of 1px solid to **info**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-info">
+				 * 	I have a info border color
+				 * </div>
+				 */
+.b-info {
+  border: 0.07143rem solid #2199e8;
+}
+
+/**
+				 * @name 	```.b-t-info```
+				 * Specify the border top of 1px solid to **info**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-t-info">
+				 * 	I have a info border top color
+				 * </div>
+				 */
+.b-t-info {
+  border-top: 0.07143rem solid #2199e8;
+}
+
+/**
+				 * @name 	```.b-r-info```
+				 * Specify the border right of 1px solid to **info**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-r-info">
+				 * 	I have a info border right color
+				 * </div>
+				 */
+.b-r-info {
+  border-right: 0.07143rem solid #2199e8;
+}
+
+/**
+				 * @name 	```.b-b-info```
+				 * Specify the border bottom of 1px solid to **info**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-b-info">
+				 * 	I have a info border bottom color
+				 * </div>
+				 */
+.b-b-info {
+  border-bottom: 0.07143rem solid #2199e8;
+}
+
+/**
+				 * @name 	```.b-l-info```
+				 * Specify the border left of 1px solid to **info**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-l-info">
+				 * 	I have a info border left color
+				 * </div>
+				 */
+.b-l-info {
+  border-left: 0.07143rem solid #2199e8;
+}
+
+/**
+				 * @name 	```.b-s-info```
+				 * Specify the border side of 1px solid to **info**
+				 * @styleguide  	Colors / Classes
+				 * @example 	html
+				 * <div class="b-s-info">
+				 * 	I have a info border side color
+				 * </div>
+				 */
+.b-s-info {
+  border-left: 0.07143rem solid #2199e8;
+  border-right: 0.07143rem solid #2199e8;
+}
+
+/**
 	 * @name 	```.h1```
 	 * h1 title styling
 	 * @styleguide 	Typography / Titles
@@ -4468,7 +5329,7 @@ body {
 .h1,
 .tf h1 {
   font-size: 3.5em;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /**
@@ -4484,7 +5345,7 @@ body {
 .h2,
 .tf h2 {
   font-size: 3em;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /**
@@ -4500,7 +5361,7 @@ body {
 .h3,
 .tf h3 {
   font-size: 2.5em;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /**
@@ -4516,7 +5377,7 @@ body {
 .h4,
 .tf h4 {
   font-size: 2em;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /**
@@ -4532,7 +5393,7 @@ body {
 .h5,
 .tf h5 {
   font-size: 1.5em;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /**
@@ -4548,7 +5409,7 @@ body {
 .h6,
 .tf h6 {
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 h1.vr,
@@ -4566,7 +5427,7 @@ h1.vr,
 .vr .h4, .h5.vr,
 .vr .h5, .h6.vr,
 .vr .h6 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.42857rem;
 }
 
 h1.vr:last-child,
@@ -4630,7 +5491,7 @@ h1.vr:last-child,
 p.vr,
 .vr p, .p.vr,
 .vr .p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.42857rem;
 }
 
 p.vr:last-child,
@@ -4790,12 +5651,12 @@ p.vr:last-child,
 .tf dl > dt {
   font-weight: bold;
   line-height: 1.5;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.71429rem;
 }
 
 .dd,
 .tf dl > dd {
-  margin-bottom: 1rem;
+  margin-bottom: 1.42857rem;
   line-height: 1.5;
 }
 
@@ -4932,7 +5793,7 @@ dl.vr,
 .dl, .ul.vr,
 .vr .ul, .ol.vr,
 .vr .ol {
-  margin-bottom: 1rem;
+  margin-bottom: 1.42857rem;
 }
 
 dl.vr:last-child,
@@ -5149,7 +6010,7 @@ ol.vr .dl, ol.vr .ul, ol.vr .ol,
   font-style: italic;
   font-family: Palatino, Times, Georgia, serif;
   font-weight: normal;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 2.5rem 5rem 2.5rem 5rem;
   display: block;
 }
 
@@ -5160,7 +6021,7 @@ ol.vr .dl, ol.vr .ul, ol.vr .ol,
   font-size: .5em;
   font-style: italic;
   display: block;
-  margin-top: 1rem;
+  margin-top: 1.42857rem;
 }
 
 .quote cite:before,
@@ -5181,7 +6042,7 @@ quote,
 blockquote.vr,
 .vr
 blockquote {
-  margin-bottom: 1rem;
+  margin-bottom: 1.42857rem;
 }
 
 .quote.vr:last-child,
@@ -5236,5 +6097,5 @@ blockquote:last-child {
 }
 
 body {
-  padding: 2rem;
+  padding: 5rem;
 }
