@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-s-sticky-component",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Stick any items with ease inside his container or depending on a totaly different element with full control over the display",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
@@ -41,6 +41,8 @@
     "changelog": "git-changelog --version_name $npm_package_version  --app_name $npm_package_name --intro \"$npm_package_description\" --logo \".resources/coffeekraken-logo.jpg\""
   },
   "keywords": [
+    "sticky",
+    "stick",
     "webcomponent",
     "component",
     "html",
