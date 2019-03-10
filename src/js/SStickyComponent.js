@@ -371,19 +371,11 @@ export default class SStickyComponent extends SWebComponent {
 		if ( ! this.needReset) return;
 		this.needReset = false;
 
-		// if is an id, add this to the body for styling
-		if (this.id) {
-			const bodyClass = `${this.componentNameDash}-${this.id}`;
-			if (this.ownerDocument.body.classList.contains(bodyClass)) {
-				this.ownerDocument.body.classList.remove(bodyClass);
-			}
-		}
-
 		// add the out class
 		this.addComponentClass(this, null, null, 'out');
 
 		// get animation properties to wait if needed
-		setTimeout(() => {
+		this.mutate(() => {
 			let animationProperties = __getAnimationProperties(this);
 
 			clearTimeout(this._resetTimeout);
@@ -396,7 +388,12 @@ export default class SStickyComponent extends SWebComponent {
 				this.style.width = '';
 
 				// reset the placeholder style
-				this._$placeholder.style.height = ''
+				// wait a little to avoid jump in scroll
+				this.mutate(() => {
+					this._$placeholder.style.height = ''
+					this._$placeholder.style.marginTop = ''
+					this._$placeholder.style.marginBottom = ''
+				})
 
 				// remove the out class
 				this.removeComponentClass(this, null, null, 'out');
